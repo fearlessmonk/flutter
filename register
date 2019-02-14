@@ -1,0 +1,142 @@
+import'package:flutter/material.dart';
+
+void main()
+{
+  runApp(AjaysApp());
+}
+
+class AjaysApp extends StatelessWidget
+{
+
+  Widget build(BuildContext context)
+  {
+    return MaterialApp(home: Scaffold(
+      appBar: AppBar(
+        title: Text("LOGIN"),
+      ),
+
+      body: Container(child: Column(children: <Widget>[
+        Row(children: <Widget>[
+
+         Column(children: <Widget>[ Container(
+           color: Colors.lightBlueAccent,
+           child:
+         Center(child: Text("Name"),),
+
+            width: 70.0,
+            height: 60.0,
+           margin: EdgeInsets.fromLTRB(14.0,20.0,0.0,0.0),
+          ),],),Column(children: <Widget>[ Container(
+            child:
+          TextFormField(decoration: InputDecoration(border: OutlineInputBorder(borderSide: new BorderSide(color: Colors.black)),labelText: 'Enter Your Name',),),
+
+            width: 287.0,
+            height: 60.0,
+           margin: EdgeInsets.fromLTRB(1.0,20.0,0.0,0.0),
+          ),],),],
+        ),
+        Row(children: <Widget>[ Column(children: <Widget>[ Container(
+          color: Colors.lightBlueAccent,
+          child:
+        Center(child: Text("Email"),),
+
+          width: 70.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(14.0,20.0,0.0,0.0),
+        ),],),
+
+
+        Column(children: <Widget>[ Container(
+          child:
+          TextFormField(decoration: InputDecoration(
+          border: OutlineInputBorder(borderSide: new BorderSide(color: Colors.lightGreen)),labelText: 'Enter Your Email',
+
+        ),
+        ),
+
+
+          width: 287.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(1.0,20.0,0.0,0.0),
+        ),],),],
+        ),
+        Row(children: <Widget>[ Column(children: <Widget>[ Container(
+          color: Colors.lightBlueAccent,
+          child:
+        Center(child: Text("Country"),),
+
+          width: 70.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(14.0,20.0,0.0,0.0),
+        ),],),
+
+
+        Column(children: <Widget>[ Container(
+          child:
+          TextFormField(decoration: InputDecoration(
+          border: OutlineInputBorder(borderSide: new BorderSide(color: Colors.lightGreen)),labelText: 'Enter Your Country',
+
+        ),
+        ),
+
+
+          width: 287.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(1.0,20.0,0.0,0.0),
+        ),],),],
+        ),
+        Row(children: <Widget>[ Column(children: <Widget>[ Container(
+          color: Colors.lightBlueAccent,
+          child:
+        Center(child: Text("Password"),),
+
+          width: 70.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(14.0,20.0,0.0,0.0),
+        ),],),
+
+
+        Column(children: <Widget>[ Container(
+          child:
+          TextFormField(decoration: InputDecoration(
+          border: OutlineInputBorder(borderSide: new BorderSide(color: Colors.lightGreen)),labelText: 'Enter Your Password',
+
+        ),
+        ),
+
+
+          width: 287.0,
+          height: 60.0,
+          margin: EdgeInsets.fromLTRB(1.0,20.0,0.0,0.0),
+        ),],),],
+        ),
+        Row(children: <Widget>[Container(child: Column(children: <Widget>[RaisedButton(
+
+          onPressed: ()
+          {
+            Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text('Hello!'),
+            ));
+
+
+          },
+          child: Text('Register'),
+        ),
+        ],
+        ),
+          margin: EdgeInsets.fromLTRB(150.0,20.0,8.0,0.0),
+        ),
+        ],
+        ),//Submit Button
+      ],
+      ),
+
+        margin: EdgeInsets.fromLTRB(8.0,21.0,8.0,0.0),
+
+      ),
+
+    ),
+    );
+  }
+}
+
