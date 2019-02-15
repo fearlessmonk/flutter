@@ -1,0 +1,105 @@
+                                          main.dart
+
+
+import 'package:flutter/material.dart';
+
+import './car_manager.dart';
+void main() => runApp(MyApp());
+
+
+class MyApp extends StatefulWidget {
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+@override
+class _MyAppState extends State<MyApp> {
+  List<String> _cars = ["Porsche"];
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+          primarySwatch: Colors.purple ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Renegade'),
+        ),
+        body: Cars_Manager(_cars),
+      ),
+    );
+  }
+}
+
+                                              wow.dart
+                                              
+ import 'package:flutter/material.dart';
+
+class wow extends StatelessWidget
+{
+  final List<String> cars;
+  wow(this.cars);
+  @override
+  Widget build(BuildContext context) {
+    return Column(children:
+    cars
+        .map((element) =>
+        Card(
+          child:
+          Column(
+            children: <Widget>[Image.asset('assets/ajay.jpg'),Text(element)],
+          ),
+        ),
+    )
+        .toList());
+  }
+}                                             
+
+          
+          
+          
+                                                car_manager.dart
+                                                
+                                       
+                                       
+  import 'package:flutter/material.dart';
+
+import './wow.dart';
+
+class Cars_Manager extends StatefulWidget {
+  final String start="carera";
+  Cars_Manager(start);
+  State<StatefulWidget> createState() {
+    return car_manager_state();
+  }
+}
+
+class car_manager_state extends State<Cars_Manager> {
+  List<String> _cars = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    _cars.add(widget.start);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          child: RaisedButton(
+            color: Colors.orangeAccent,
+            textColor: Colors.black,
+            onPressed: () {
+              setState(() {
+                _cars.add("hola amigo");
+              });
+            },
+            child: Text('Click Mate'),
+          ),
+        ),wow(_cars)
+      ],
+    );
+  }
+}
